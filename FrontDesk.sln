@@ -24,6 +24,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Tools\docker-compose.postgresql.yml = Tools\docker-compose.postgresql.yml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AppointmentScheduling", "AppointmentScheduling", "{F66F97D5-3866-41D7-A152-5D3DF49EB5D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppointmentScheduling.Core", "AppointmentScheduling\AppointmentScheduling.Core\AppointmentScheduling.Core.csproj", "{6C17C63A-585A-4EEA-A7DE-1E674AE49EFE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +113,18 @@ Global
 		{14A4B7D3-6BC7-4D46-852F-441AA3EDC1AE}.Release|x64.Build.0 = Release|Any CPU
 		{14A4B7D3-6BC7-4D46-852F-441AA3EDC1AE}.Release|x86.ActiveCfg = Release|Any CPU
 		{14A4B7D3-6BC7-4D46-852F-441AA3EDC1AE}.Release|x86.Build.0 = Release|Any CPU
+		{6C17C63A-585A-4EEA-A7DE-1E674AE49EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C17C63A-585A-4EEA-A7DE-1E674AE49EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C17C63A-585A-4EEA-A7DE-1E674AE49EFE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6C17C63A-585A-4EEA-A7DE-1E674AE49EFE}.Debug|x64.Build.0 = Debug|Any CPU
+		{6C17C63A-585A-4EEA-A7DE-1E674AE49EFE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6C17C63A-585A-4EEA-A7DE-1E674AE49EFE}.Debug|x86.Build.0 = Debug|Any CPU
+		{6C17C63A-585A-4EEA-A7DE-1E674AE49EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C17C63A-585A-4EEA-A7DE-1E674AE49EFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C17C63A-585A-4EEA-A7DE-1E674AE49EFE}.Release|x64.ActiveCfg = Release|Any CPU
+		{6C17C63A-585A-4EEA-A7DE-1E674AE49EFE}.Release|x64.Build.0 = Release|Any CPU
+		{6C17C63A-585A-4EEA-A7DE-1E674AE49EFE}.Release|x86.ActiveCfg = Release|Any CPU
+		{6C17C63A-585A-4EEA-A7DE-1E674AE49EFE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{052F8906-856B-4D7A-84FB-FD5536616903} = {D07BA042-7B88-4755-B978-F4C6B99E9D43}
@@ -117,5 +133,6 @@ Global
 		{4F4B2363-A95D-4EB2-9B51-2C3EE5AFC8A5} = {800DA052-95AC-48D8-9990-313692964FC3}
 		{729A3D53-71A0-4B8D-A8A3-0EB782E163AF} = {800DA052-95AC-48D8-9990-313692964FC3}
 		{14A4B7D3-6BC7-4D46-852F-441AA3EDC1AE} = {D07BA042-7B88-4755-B978-F4C6B99E9D43}
+		{6C17C63A-585A-4EEA-A7DE-1E674AE49EFE} = {F66F97D5-3866-41D7-A152-5D3DF49EB5D0}
 	EndGlobalSection
 EndGlobal

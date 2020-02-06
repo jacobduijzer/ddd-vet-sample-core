@@ -1,6 +1,5 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 using ClientPatientManagement.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +9,7 @@ namespace ClientPatientManagement.Data
     {
         private readonly CrudContext _context;
         private readonly DbSet<TEntity> _dbSet;
+
         public Repository()
         {
 
@@ -20,7 +20,7 @@ namespace ClientPatientManagement.Data
             this._dbSet = context.Set<TEntity>();
         }
 
-        public IEnumerable<TEntity> List() => _dbSet.ToList();
+        public async Task<IEnumerable<TEntity>> List() => await _dbSet.ToListAsync().ConfigureAwait(false);
 
         public TEntity GetById(int id) => _dbSet.Find(id);
 
