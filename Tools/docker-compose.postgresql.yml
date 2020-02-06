@@ -1,0 +1,26 @@
+version: '3.6'
+
+networks:
+  vetclinic-network:
+    name: vetclinic-network
+    external: true
+
+services:
+  vetclinic.db:
+    image: library/postgres:11
+    container_name: vetclinic.db
+    networks:
+      - vetclinic-network
+    environment:
+      TZ: Europe/Amsterdam
+      POSTGRES_USER: postgres
+      POSTGRES_DATA: postgres
+      POSTGRES_DB: VetClinic
+    ports:
+      - 5432:5432
+    volumes:
+      - vetclinic_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  vetclinic_data:
