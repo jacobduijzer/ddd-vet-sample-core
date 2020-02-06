@@ -1,4 +1,4 @@
-namespace FrontDesk.Web.ViewModels
+namespace FrontDesk.Web.Clients
 {
     public class PatientViewModel
     {

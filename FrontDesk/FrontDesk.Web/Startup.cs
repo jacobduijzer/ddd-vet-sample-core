@@ -1,6 +1,5 @@
 using System.Reflection;
 using ClientPatientManagement.Core.Interfaces;
-using ClientPatientManagement.Core.Models;
 using ClientPatientManagement.Data;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -22,7 +21,7 @@ namespace FrontDesk.Web
             services
                 .AddDbContext<CrudContext>(options =>
                     options.UseNpgsql(_configuration.GetConnectionString("VetClinicDatabase")))
-                .AddScoped<IRepository<Client>, Repository<Client>>()
+                .AddScoped(typeof(IRepository<>), typeof(Repository<>))
                 .AddMediatR(typeof(Startup).GetTypeInfo().Assembly)
                 .AddRazorPages();
 

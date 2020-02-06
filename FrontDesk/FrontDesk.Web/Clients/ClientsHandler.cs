@@ -4,7 +4,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using ClientPatientManagement.Core.Interfaces;
 using ClientPatientManagement.Core.Models;
-using FrontDesk.Web.ViewModels;
 using MediatR;
 
 namespace FrontDesk.Web.Clients

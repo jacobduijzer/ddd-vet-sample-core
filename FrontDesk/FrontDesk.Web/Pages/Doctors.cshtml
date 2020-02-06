@@ -1,5 +1,42 @@
 @page
 @model FrontDesk.Web.Pages.DoctorsModel
 @{
+    ViewData["Title"] = "Doctors";
 }
-<h1>Doctors</h1>
+
+<h2>Doctors</h2>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctors[0].DoctorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctors[0].Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Doctors)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DoctorId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.DoctorId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.DoctorId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.DoctorId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

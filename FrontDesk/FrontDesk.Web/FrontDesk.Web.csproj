@@ -26,7 +26,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\" />
     <Folder Include="Clients\" />
+    <Folder Include="Doctors\" />
+    <Folder Include="Rooms\" />
   </ItemGroup>
 </Project>

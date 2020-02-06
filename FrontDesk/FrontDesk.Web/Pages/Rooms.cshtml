@@ -1,5 +1,45 @@
 @page
 @model FrontDesk.Web.Pages.RoomsModel
 @{
+    ViewData["Title"] = "Rooms";
 }
-<h1>Rooms</h1>
+
+<h2>Rooms</h2>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rooms[0].Name)
+            </th>
+            <th>
+                <a asp-page="./Rooms" asp-route-sortOrder="@Model.NameSort">
+                    @Html.DisplayNameFor(model => model.Rooms[0].Name)
+                </a>
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Rooms)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RoomId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.RoomId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.RoomId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.RoomId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
