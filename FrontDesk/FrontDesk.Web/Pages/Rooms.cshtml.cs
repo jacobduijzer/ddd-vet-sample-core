@@ -1,35 +1,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FrontDesk.Web.Pages.Shared;
 using FrontDesk.Web.Rooms;
 using MediatR;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace FrontDesk.Web.Pages
 {
-    public class RoomsModel : PageModel
+    public class RoomsModel : PageModelBase
     {
-        private readonly IMediator _mediator;
+        public RoomsModel(IMediator mediator) : base(mediator)
+        {
+        }
 
-        public RoomsModel(IMediator mediator) => _mediator = mediator;
-
-        public string NameSort { get; set; }
-        
         public IList<RoomViewModel> Rooms { get; private set; }
 
-        public async Task OnGetAsync(string sortOrder)
+        public async Task OnGetAsync()
         {
-            NameSort = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-
-            var rooms = await _mediator.Send(new RoomsRequest(x => x.Name)).ConfigureAwait(false);
+            var rooms = await Mediator.Send(new RoomsRequest()).ConfigureAwait(false);
             if (rooms.Any())
-            {
-                if(string.IsNullOrEmpty(sortOrder))
-                    Rooms = new List<RoomViewModel>(rooms.OrderByDescending(x => x.Name));
-                else
-                    Rooms = new List<RoomViewModel>(rooms.OrderBy(x => x.Name));
-            }
-                
+                Rooms = new List<RoomViewModel>(rooms);
         }
     }
 }

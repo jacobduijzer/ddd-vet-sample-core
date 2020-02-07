@@ -13,12 +13,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Rooms[0].Name)
+                @Html.DisplayNameFor(model => model.Rooms[0].RoomId)
             </th>
-            <th>
-                <a asp-page="./Rooms" asp-route-sortOrder="@Model.NameSort">
-                    @Html.DisplayNameFor(model => model.Rooms[0].Name)
-                </a>
+            <th
+                @Html.DisplayNameFor(model => model.Rooms[0].Name)
             </th>
 
             <th></th>
